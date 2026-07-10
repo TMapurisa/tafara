@@ -4,7 +4,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
 
   const tabs = [
-    { id: 'skills', label: 'Skills' },
+    { id: 'skill1s', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'education', label: 'Education' },
     { id: 'certifications', label: 'Certifications' }
