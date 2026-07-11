@@ -84,9 +84,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-bg-primary py-[100px] px-6">
+    <section id="contact" className="bg-bg-primary py-16 md:py-[100px] px-6">
       <div className="max-w-[1140px] mx-auto">
-        <h1 className="font-headings text-[3.4rem] md:text-[4rem] font-bold text-text-primary tracking-tight text-center reveal">
+        <h1 className="font-headings text-[2.4rem] sm:text-[3.4rem] md:text-[4rem] font-bold text-text-primary tracking-tight text-center reveal">
           Get in <span className="text-accent">Touch</span>
         </h1>
 
@@ -94,19 +94,19 @@ const Contact = () => {
           {/* Contact Information Cards */}
           <div className="contact-info-column flex flex-col gap-4 flex-1 reveal">
             {contactDetails.map((detail) => (
-              <div 
-                key={detail.id} 
+              <div
+                key={detail.id}
                 className="contact-item flex items-center gap-5 bg-bg-card border border-border-color rounded-xl p-6 hover:border-border-hover hover:bg-bg-card-hover transition-all duration-250"
                 id={`contact-${detail.id}`}
               >
                 <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-accent-subtle border border-accent-border rounded-lg text-accent" aria-hidden="true">
                   {detail.icon}
                 </div>
-                <div className="contact-info">
-                  <h1 className="font-headings text-[1.2rem] font-semibold text-text-muted uppercase tracking-[0.1em] mb-0.5">
+                <div className="contact-info min-w-0">
+                  <h1 className="font-headings text-[1.1rem] font-semibold text-text-muted uppercase tracking-[0.1em] mb-0.5">
                     {detail.label}
                   </h1>
-                  <h2 className="text-[1.55rem] font-medium text-text-primary">
+                  <h2 className="text-[1.3rem] sm:text-[1.55rem] font-medium text-text-primary break-words">
                     {detail.value}
                   </h2>
                 </div>
@@ -115,62 +115,62 @@ const Contact = () => {
           </div>
 
           {/* Contact Input Form */}
-          <div className="contact-form-column flex-1.2 reveal">
-            <form onSubmit={handleFormSubmit} className="contact-form bg-bg-card border border-border-color rounded-xl p-8 flex flex-col gap-5">
+          <div className="contact-form-column flex-[1.2] reveal">
+            <form onSubmit={handleFormSubmit} className="contact-form bg-bg-card border border-border-color rounded-xl p-5 sm:p-8 flex flex-col gap-5">
               <div className="form-group flex flex-col gap-2">
-                <label htmlFor="form-name" className="font-headings text-[1.35rem] font-semibold text-text-primary">
+                <label htmlFor="form-name" className="font-headings text-[1.25rem] sm:text-[1.35rem] font-semibold text-text-primary">
                   Full Name
                 </label>
-                <input 
-                  type="text" 
-                  id="form-name" 
-                  className="form-control bg-white/3 border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250"
-                  placeholder="Your full name" 
+                <input
+                  type="text"
+                  id="form-name"
+                  className="form-control bg-black/[0.02] border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.4rem] sm:text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250"
+                  placeholder="Your full name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  required 
+                  required
                 />
               </div>
 
               <div className="form-group flex flex-col gap-2">
-                <label htmlFor="form-email" className="font-headings text-[1.35rem] font-semibold text-text-primary">
+                <label htmlFor="form-email" className="font-headings text-[1.25rem] sm:text-[1.35rem] font-semibold text-text-primary">
                   Email Address
                 </label>
-                <input 
-                  type="email" 
-                  id="form-email" 
-                  className="form-control bg-white/3 border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250"
-                  placeholder="Your email address" 
+                <input
+                  type="email"
+                  id="form-email"
+                  className="form-control bg-black/[0.02] border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.4rem] sm:text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250"
+                  placeholder="Your email address"
                   value={formData.email}
                   onChange={handleInputChange}
-                  required 
+                  required
                 />
               </div>
 
               <div className="form-group flex flex-col gap-2">
-                <label htmlFor="form-message" className="font-headings text-[1.35rem] font-semibold text-text-primary">
+                <label htmlFor="form-message" className="font-headings text-[1.25rem] sm:text-[1.35rem] font-semibold text-text-primary">
                   Message
                 </label>
-                <textarea 
-                  id="form-message" 
-                  className="form-control bg-white/3 border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250 resize-y min-h-[130px]"
-                  placeholder="How can I help you?" 
+                <textarea
+                  id="form-message"
+                  className="form-control bg-black/[0.02] border border-border-color rounded-lg p-[13px_16px] text-text-primary font-body text-[1.4rem] sm:text-[1.5rem] placeholder-text-muted focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-subtle)] transition-all duration-250 resize-y min-h-[130px]"
+                  placeholder="How can I help you?"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                 />
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting}
-                className="cta text-[1.5rem] font-semibold py-[13px] px-[30px] rounded-lg bg-accent border border-accent hover:bg-accent-hover hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(59,130,246,0.25)] text-white inline-flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="cta text-[1.4rem] sm:text-[1.5rem] font-semibold py-[13px] px-[30px] rounded-lg bg-accent border border-accent hover:bg-accent-hover hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(37,99,235,0.25)] text-white inline-flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending Message...' : 'Send Message'}
               </button>
 
               {status && (
-                <div className="form-feedback success bg-green-500/8 border border-green-500/20 text-[#22c55e] p-[14px_18px] rounded-lg text-[1.4rem] font-semibold">
+                <div className="form-feedback success bg-green-500/8 border border-green-500/20 text-[#15803d] p-[14px_18px] rounded-lg text-[1.3rem] sm:text-[1.4rem] font-semibold">
                   {status}
                 </div>
               )}

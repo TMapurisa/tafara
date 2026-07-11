@@ -23,38 +23,38 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-bg-primary py-[100px] px-6">
+    <section id="projects" className="bg-bg-primary py-16 md:py-[100px] px-6">
       <div className="max-w-[1140px] mx-auto">
         <div className="text-center mb-[50px] reveal">
-          <h1 className="font-headings text-[3.4rem] md:text-[4rem] font-bold text-text-primary tracking-tight">
+          <h1 className="font-headings text-[2.4rem] sm:text-[3.4rem] md:text-[4rem] font-bold text-text-primary tracking-tight">
             Recent <span className="text-accent">Projects</span>
           </h1>
         </div>
 
         <div className="flex flex-col gap-8">
           {projectData.map((project) => (
-            <div 
-              key={project.id} 
-              className="flex flex-col md:flex-row md:even:flex-row-reverse bg-bg-card border border-border-color rounded-xl overflow-hidden hover:border-border-hover hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] transition-all duration-300 ease-custom md:min-h-[360px] reveal"
+            <div
+              key={project.id}
+              className="flex flex-col md:flex-row md:even:flex-row-reverse bg-bg-card border border-border-color rounded-xl overflow-hidden hover:border-border-hover hover:shadow-[0_16px_48px_rgba(15,23,42,0.1)] transition-all duration-300 ease-custom md:min-h-[360px] reveal"
               id={`project-${project.id}`}
             >
               {/* Project Info Column */}
-              <div className="flex-1.3 p-8 md:p-10 flex flex-col justify-center">
-                <h1 className="font-headings text-[1.2rem] font-bold uppercase tracking-[0.12em] text-accent mb-2">
+              <div className="flex-[1.3] p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+                <h1 className="font-headings text-[1.1rem] font-bold uppercase tracking-[0.12em] text-accent mb-2">
                   {project.category}
                 </h1>
-                <h2 className="font-headings text-2.4xl font-bold text-text-primary tracking-tight mb-[14px]">
+                <h2 className="font-headings text-[1.8rem] sm:text-[2.2rem] font-bold text-text-primary tracking-tight mb-[14px]">
                   {project.title}
                 </h2>
-                <p className="text-[1.5rem] text-text-secondary leading-[1.65] mb-[18px]">
+                <p className="text-[1.3rem] sm:text-[1.5rem] text-text-secondary leading-[1.65] mb-[18px]">
                   {project.desc}
                 </p>
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2 mb-[22px]">
                   {project.tags.map((tag) => (
-                    <span 
-                      key={tag} 
-                      className="text-[1.2rem] font-medium text-text-primary bg-white/4 border border-border-color px-3 py-1 rounded-[6px]"
+                    <span
+                      key={tag}
+                      className="text-[1.2rem] font-medium text-text-primary bg-black/[0.03] border border-border-color px-3 py-1 rounded-[6px]"
                     >
                       {tag}
                     </span>

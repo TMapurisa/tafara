@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,10 +8,10 @@ const Footer = () => {
     <footer id="footer" className="bg-bg-secondary border-t border-border-color">
       <div className="footer max-w-[1140px] mx-auto flex flex-col items-center text-center py-12 px-6 gap-3">
         <div className="brand font-headings text-2xl font-bold text-text-primary">
-          <h1><span>T</span>afara <span>M</span>apurisa</h1>
+          <h1><Link to="/"><span>T</span>afara <span>M</span>apurisa</Link></h1>
         </div>
         <h2 className="font-headings text-[1.3rem] font-semibold text-text-muted uppercase tracking-[0.12em]">
-          Software Engineer
+          Graduate Trainee Software Engineer
         </h2>
         
         {/* Social Icons */}

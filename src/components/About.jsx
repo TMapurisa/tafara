@@ -1,152 +1,119 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+const skills = [
+  {
+    title: 'Software Engineering',
+    desc: 'System analysis, object-oriented design, database architecture, and implementation workflows.'
+  },
+  {
+    title: 'Web Development',
+    desc: 'Responsive front-ends, clean layouts, and functional web tools with modern standards.'
+  },
+  {
+    title: 'App Development',
+    desc: 'Native Java development on Android, focusing on performant UI and API integration.'
+  }
+];
+
+const timeline = [
+  { year: 'Feb 2026 – Present', title: 'MSc Computer Science', place: 'University of Zimbabwe', current: true },
+  { year: 'Jan 2025 – Present', title: 'Graduate Trainee Software Engineer', place: 'TelOne', current: true },
+  { year: 'Dec 2022 – Feb 2023', title: 'IT Intern', place: 'IHS Towers Zambia' },
+  { year: '2020 – 2024', title: 'B.Sc. Computer Science', place: 'The University of Zambia' },
+  { year: '2016 – 2017', title: 'Advanced Level', place: 'Shungu High School' }
+];
+
+const certifications = [
+  { title: 'CCNA 1', issuer: 'CISCO Networking Academy' },
+  { title: 'IT Essentials', issuer: 'CISCO Networking Academy' },
+  { title: 'Linux Unhatched', issuer: 'CISCO Networking Academy' },
+  { title: 'Computer Operations & Packages', issuer: 'HEXCO' }
+];
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('skills');
-
-  const tabs = [
-    { id: 'skill1s', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' }
-  ];
-
   return (
-    <section id="about" className="bg-bg-secondary py-[100px] px-6">
-      <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
-        
+    <section id="about" className="bg-bg-secondary py-16 md:py-[100px] px-6">
+      <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-12">
+
         {/* Profile Image Column */}
         <div className="w-full md:w-auto flex-shrink-0 flex justify-center reveal">
-          <div className="about-img w-[260px] h-[340px] md:w-[300px] md:h-[380px] rounded-xl overflow-hidden border-2 border-border-color relative shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+          <div className="about-img w-[220px] h-[290px] sm:w-[260px] sm:h-[340px] md:w-[300px] md:h-[380px] rounded-xl overflow-hidden border-2 border-border-color relative shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
             <img src="./img/img-2.jpg" alt="Tafara Mapurisa portrait" />
             <div className="absolute inset-0 rounded-xl border-2 border-accent-border pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </div>
 
-        {/* Text and Tabs Column */}
+        {/* Text Column */}
         <div className="w-full flex-1 reveal">
-          <h1 className="font-headings text-[3.4rem] font-bold text-text-primary tracking-tight text-left mb-2">
+          <h2 className="font-headings text-[2.4rem] sm:text-[3.4rem] font-bold text-text-primary tracking-tight text-left mb-2">
             About <span className="text-accent">Me</span>
-          </h1>
-          <h2 className="font-headings text-[1.4rem] font-semibold text-accent uppercase tracking-[0.15em] mb-4">
-            Software Engineer
           </h2>
-          <p className="text-[1.55rem] text-text-secondary leading-[1.7] mb-4">
-            Graduate Software Engineer passionate about crafting elegant, robust solutions. With a degree in Computer Science, I balance logic and creative design to build reliable digital products.
+          <h3 className="font-headings text-[1.2rem] sm:text-[1.4rem] font-semibold text-accent uppercase tracking-[0.15em] mb-4">
+            Graduate Trainee Software Engineer
+          </h3>
+          <p className="text-[1.3rem] sm:text-[1.55rem] text-text-secondary leading-[1.7] mb-4">
+            Graduate Trainee Software Engineer at TelOne, currently pursuing an MSc in Computer Science at the University of Zimbabwe. I balance logic and creative design to build reliable digital products.
           </p>
-          <p className="text-[1.55rem] text-text-secondary leading-[1.7] mb-7">
+          <p className="text-[1.3rem] sm:text-[1.55rem] text-text-secondary leading-[1.7] mb-10">
             I see challenges as opportunities for growth, keeping my skills aligned with emerging technologies. Clear technical communication and strong teamwork are central to my approach.
           </p>
 
-          {/* Tab Button Lists */}
-          <div className="tab-titles flex border-bottom border-border-color mt-3 mb-6 overflow-x-auto" role="tablist">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                aria-controls={tab.id}
-                className={`tab-links text-[1.45rem] font-medium py-3 px-[18px] relative whitespace-nowrap transition-colors duration-250 border-b-2 mb-[-1px] ${
-                  activeTab === tab.id
-                    ? 'text-text-primary font-semibold border-b-accent'
-                    : 'text-text-muted border-b-transparent hover:text-text-primary'
-                }`}
-                onClick={() => setActiveTab(tab.id)}
+          {/* Skills */}
+          <h4 className="font-headings text-[1.2rem] font-semibold text-text-muted uppercase tracking-[0.15em] mb-4">
+            What I Do
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-5 mb-10 sm:divide-x sm:divide-border-color">
+            {skills.map((skill, i) => (
+              <div
+                key={skill.title}
+                style={{ transitionDelay: `${i * 80}ms` }}
+                className="sm:pl-8 sm:first:pl-0 reveal"
               >
-                {tab.label}
-              </button>
+                <span className="font-headings text-2xl font-semibold text-text-primary block mb-1">{skill.title}</span>
+                <p className="text-[1.2rem] sm:text-[1.35rem] text-text-secondary leading-[1.6]">{skill.desc}</p>
+              </div>
             ))}
           </div>
 
-          {/* Tab Contents */}
-          <div className="tab-container min-h-[220px]">
-            {/* Skills Tab Panel */}
-            <div 
-              id="skills" 
-              role="tabpanel" 
-              className={`tab-content ${activeTab === 'skills' ? 'active-tab' : ''}`}
-            >
-              <ul className="list-none">
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">Software Engineering</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">System analysis, object-oriented design, database architecture, and implementation workflows.</p>
-                </li>
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">Web Development</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">Responsive front-ends, clean layouts, and functional web tools with modern standards.</p>
-                </li>
-                <li className="pl-5 relative py-3 border-b-0 before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">App Development</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">Native Java development on Android, focusing on performant UI and API integration.</p>
-                </li>
-              </ul>
-            </div>
+          {/* Experience & Education Timeline */}
+          <h4 className="font-headings text-[1.2rem] font-semibold text-text-muted uppercase tracking-[0.15em] mb-4">
+            Experience &amp; Education
+          </h4>
+          <ol className="mb-10">
+            {timeline.map((entry, i) => (
+              <li
+                key={entry.title}
+                style={{ transitionDelay: `${i * 60}ms` }}
+                className={`timeline-rail relative pl-7 reveal ${i !== timeline.length - 1 ? 'pb-6' : ''}`}
+              >
+                <span className={`timeline-dot ${entry.current ? 'timeline-dot-current' : ''}`} aria-hidden="true"></span>
+                <span className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-text-muted uppercase tracking-[0.1em] block mb-0.5">{entry.year}</span>
+                <span className="font-headings text-[1.3rem] sm:text-2xl font-semibold text-text-primary block">{entry.title}</span>
+                <p className="text-[1.2rem] sm:text-[1.35rem] text-text-secondary mt-0.5">{entry.place}</p>
+              </li>
+            ))}
+          </ol>
 
-            {/* Experience Tab Panel */}
-            <div 
-              id="experience" 
-              role="tabpanel" 
-              className={`tab-content ${activeTab === 'experience' ? 'active-tab' : ''}`}
-            >
-              <ul className="list-none">
-                <li className="pl-5 relative py-3 border-b-0 before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">IT Intern</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">IHS Towers Zambia</p>
-                  <i className="text-[1.3rem] not-italic text-text-muted mt-0.5 block">Dec 2022 – Feb 2023</i>
-                </li>
-              </ul>
-            </div>
-
-            {/* Education Tab Panel */}
-            <div 
-              id="education" 
-              role="tabpanel" 
-              className={`tab-content ${activeTab === 'education' ? 'active-tab' : ''}`}
-            >
-              <ul className="list-none">
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">B.Sc. Computer Science</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">The University of Zambia</p>
-                  <i className="text-[1.3rem] not-italic text-text-muted mt-0.5 block">2020 – 2024</i>
-                </li>
-                <li className="pl-5 relative py-3 border-b-0 before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">Advanced Level</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">Shungu High School</p>
-                  <i className="text-[1.3rem] not-italic text-text-muted mt-0.5 block">2016 – 2017</i>
-                </li>
-              </ul>
-            </div>
-
-            {/* Certifications Tab Panel */}
-            <div 
-              id="certifications" 
-              role="tabpanel" 
-              className={`tab-content ${activeTab === 'certifications' ? 'active-tab' : ''}`}
-            >
-              <ul className="list-none">
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">CCNA 1</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">CISCO Networking Academy</p>
-                </li>
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">IT Essentials</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">CISCO Networking Academy</p>
-                </li>
-                <li className="pl-5 relative py-3 border-b border-border-color before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">Linux Unhatched</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">CISCO Networking Academy</p>
-                </li>
-                <li className="pl-5 relative py-3 border-b-0 before:content-[''] before:absolute before:left-0 before:top-5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">
-                  <span className="font-headings text-2xl font-semibold text-text-primary block">Computer Operations &amp; Packages</span>
-                  <p className="text-[1.4rem] text-text-secondary mt-0.5">HEXCO</p>
-                </li>
-              </ul>
-            </div>
+          {/* Certifications */}
+          <h4 className="font-headings text-[1.2rem] font-semibold text-text-muted uppercase tracking-[0.15em] mb-4">
+            Certifications
+          </h4>
+          <div className="flex flex-wrap gap-3 mb-10">
+            {certifications.map((cert) => (
+              <span
+                key={cert.title}
+                title={cert.issuer}
+                className="tag-pill text-[1.3rem] font-medium text-text-secondary rounded-full px-4 py-2"
+              >
+                {cert.title}
+              </span>
+            ))}
           </div>
-          
+
           {/* Download Resume Button */}
-          <a 
-            href="/Tafara_Mapurisa_CV.pdf" 
-            className="cta mt-7 text-[1.5rem] font-semibold py-[13px] px-[30px] rounded-lg bg-accent border border-accent hover:bg-accent-hover hover:-translate-y-[2px] text-white inline-flex items-center gap-2 transition-all duration-300"
+          <a
+            href="/Tafara_Mapurisa_CV.pdf"
+            className="cta text-[1.4rem] sm:text-[1.5rem] font-semibold py-[13px] px-[30px] rounded-lg bg-accent border border-accent hover:bg-accent-hover hover:-translate-y-[2px] text-white inline-flex items-center gap-2 transition-all duration-300"
             download
             id="download-cv-btn"
           >
